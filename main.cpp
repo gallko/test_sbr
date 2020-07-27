@@ -1,4 +1,5 @@
 #include <iostream>
+#include "List_impl.h"
 
 /**
  * 1.
@@ -45,5 +46,14 @@ int main() {
     RemoveDups(data);
     std::cout << data << std::endl;
 
+    List list;
+    FILE* file = fopen("text.bin", "wb");
+    list.Serialize(file);
+    fclose(file);
+
+    List list2;
+    FILE* file2 = fopen("text.bin", "rb");
+    list2.Deserialize(file2);
+    fclose(file2);
     return 0;
 }

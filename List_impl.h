@@ -14,18 +14,17 @@ struct ListNode {
 class List {
 public:
     List();
+    ~List();
     void Serialize(FILE* file);
     void Deserialize(FILE* file);
-
-    void push_back(const std::string& );
 
 private:
     ListNode*   head;
     ListNode*   tail;
     int count;
 
-    ListNode* create_node_end();
+    ListNode* create_node_tail();
+    void clear();
 };
-
 
 #endif //TEST_LIST_IMPL_H

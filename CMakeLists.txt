@@ -1,6 +1,8 @@
-# cmake_minimum_required(VERSION <specify CMake version here>)
-project(test)
+cmake_minimum_required(VERSION 3.10)
+project(testSBR)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(test main.cpp)
+file(GLOB ${PROJECT_NAME}_SRC ./*.cpp)
+
+add_executable(test ${${PROJECT_NAME}_SRC})
